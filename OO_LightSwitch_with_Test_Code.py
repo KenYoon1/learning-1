@@ -24,3 +24,5 @@ oLightSwitch.turnOff()
 oLightSwitch.show()
 oLightSwitch.turnOn() 
 oLightSwitch.show() 
+
+print('test')
