@@ -15,14 +15,6 @@ class LightSwitch():
         print(self.switchIsOn)
  
 # Main code
-oLightSwitch = LightSwitch() # create a LightSwitch object
-# Calls to methods
-oLightSwitch.show() 
-oLightSwitch.turnOn() 
-oLightSwitch.show()
-oLightSwitch.turnOff() 
-oLightSwitch.show()
-oLightSwitch.turnOn() 
-oLightSwitch.show() 
 
-print('test')
+oLightSwitch1.show()
+
