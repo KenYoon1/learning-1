@@ -18,3 +18,4 @@ class LightSwitch():
 
 oLightSwitch1.show()
 
+#test
