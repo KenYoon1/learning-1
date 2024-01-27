@@ -5,11 +5,17 @@ import sys
 
 from pathlib import Path
 
+import random
+
 # 2 - Define constants
 BLACK = (0, 0, 0)
 WINDOW_WIDTH = 640
 WINDOW_HEIGHT = 480
 FRAMES_PER_SECOND = 30 
+BALL_WIDTH_HEIGHT = 100
+MAX_WIDTH = WINDOW_WIDTH - BALL_WIDTH_HEIGHT
+MAX_HEIGHT = WINDOW_HEIGHT - BALL_WIDTH_HEIGHT
+
 
 BASE_PATH = Path('anime girl.png')
 
@@ -24,6 +30,8 @@ clock = pygame.time.Clock()
 ballImage = pygame.image.load('anime girl.png')
 
 # 5 - Initalize variables 
+ballX = random.randrange(MAX_WIDTH)
+bally = random.randrange()
 
 # 6 - Loop forever 
 while True: 
