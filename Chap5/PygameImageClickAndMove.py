@@ -31,7 +31,8 @@ ballImage = pygame.image.load('anime girl.png')
 
 # 5 - Initalize variables 
 ballX = random.randrange(MAX_WIDTH)
-bally = random.randrange()
+ballY = random.randrange(MAX_HEIGHT)
+ballRect = pygame.Rect(ballX, ballY, BALL_WIDTH_HEIGHT, BALL_WIDTH_HEIGHT)
 
 # 6 - Loop forever 
 while True: 
