@@ -29,7 +29,65 @@ clock = pygame.time.Clock()
 
 # 4 - Load assets: image(s), sound(s), etc.
 
-# 5 - 
+# 5 - Initialize variables 
+
+oCallBackTest = CallBackTest()
+# Create instance of SimpleButton
+# No call back
+oButtonA = SimpleButton(window, (25, 30),
+                        'images/buttonAUp.png',
+                        'images/buttonADown.png')
+# Specifying a fuction to call back
+oButtonB = SimpleButton(window, (150, 30),
+                        'images/buttonBUp.png',
+                        'images/buttonBDown.png',
+                        callBack=myCallBackFunction
+                        )
+# Specifying a method of an object to call back
+oButtonC = SimpleButton(window, (275, 30),
+                        'images/buttonCUp.png',
+                        'images/buttonCDown.png',
+                        callBack=oCallBackTest.myMethod
+                        )
+counter = 0
+
+# 6 - Loop forever
+while True: 
+    
+    # 7 - Check for and handle events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+        # Pass the event to the button, see if it has been clicked on
+        if oButtonA.handleEvent(event):
+            print('User pressed button A, handled in the main loop')
+        
+        # oButtonB and oButtonC have callbacks,
+        # No need to check the result of these calls 
+        oButtonB.handleEvent(event)
+
+        oButtonC.handleEvent(event)
+
+    # 8 - Do any "per frame" actions
+    counter = counter + 1
+
+    # 9 - Clear the window
+    window.fill(GRAY)
+
+    # 10 - Draw all window elements 
+    oButtonA.draw()
+    oButtonB.draw()
+    oButtonC.draw()
+
+    # 11 - Update the window()
+    pygame.display.update()
+
+    # 12 - Slow things down a bit 
+    clock.tick(FRAMES_PER_SECOND) # make pygame wait 
+
+    
 
 
 
